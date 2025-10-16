@@ -18,7 +18,7 @@ def main():
     client.connect(ADDR)
     while True:  ### multiple communications
         data = client.recv(SIZE).decode(FORMAT)
-###        cmd, msg = data.split("@")
+#/        cmd, msg = data.split("@")
         if cmd == "OK":
             print(f"{msg}")
         elif cmd == "DISCONNECTED":
@@ -42,7 +42,7 @@ def main():
     print("Disconnected from the server.")
     client.close() ## close the connection
 
-###
+\#
 
 if __name__ == "__main__":
     main()
