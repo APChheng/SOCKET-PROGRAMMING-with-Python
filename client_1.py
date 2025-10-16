@@ -18,31 +18,31 @@ def main():
     client.connect(ADDR)
     while True:  ### multiple communications
         data = client.recv(SIZE).decode(FORMAT)
-#/        cmd, msg = data.split("@")
-        if cmd == "OK":
-            print(f"{msg}")
-        elif cmd == "DISCONNECTED":
-            print(f"{msg}")
-            break
+    #     cmd, msg = data.split("@")
+    #     if cmd == "OK":
+    #         print(f"{msg}")
+    #     elif cmd == "DISCONNECTED":
+    #         print(f"{msg}")
+    #         break
         
-        data = input("> ") 
-        data = data.split(" ")
-        cmd = data[0]
+    #     data = input("> ") 
+    #     data = data.split(" ")
+    #     cmd = data[0]
 
-        if cmd == "TASK":
-            client.send(cmd.encode(FORMAT))
+    #     if cmd == "TASK":
+    #         client.send(cmd.encode(FORMAT))
 
-        elif cmd == "LOGOUT":
-            client.send(cmd.encode(FORMAT))
-            break
+    #     elif cmd == "LOGOUT":
+    #         client.send(cmd.encode(FORMAT))
+    #         break
       
 
 
 
-    print("Disconnected from the server.")
-    client.close() ## close the connection
+    # print("Disconnected from the server.")
+    # client.close() ## close the connection
 
-\#
+
 
 if __name__ == "__main__":
     main()
